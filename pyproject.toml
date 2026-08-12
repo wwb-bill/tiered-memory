@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tiered-memory"
+version = "0.1.0"
+description = "Hot/warm/cold tiered agent memory — sliding window + compressed summary + persistent retrieval. Zero dependencies."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "wwb-bill" }]
+keywords = ["memory", "agent", "tiered", "hot", "warm", "cold", "context"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+tiered-memory = "tiered_memory.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
